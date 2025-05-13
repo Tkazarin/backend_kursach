@@ -1,0 +1,9 @@
+USE backend_kursach;
+
+DROP TABLE IF EXISTS user;
+CREATE TABLE user (
+    id_user INT AUTO_INCREMENT PRIMARY KEY,
+    nickname VARCHAR(255) NOT NULL UNIQUE,
+    password VARCHAR(255) NOT NULL,
+    email VARCHAR(255) NOT NULL
+);
