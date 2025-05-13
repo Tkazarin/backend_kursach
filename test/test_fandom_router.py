@@ -16,6 +16,8 @@ def admin_cookies():
 
 admin_cookies = admin_cookies()
 
+
+@pytest.fixture
 def created_fandom_id():
     body = {
         "title": f"Test Fandom {unique_suffix}",
@@ -28,6 +30,7 @@ def created_fandom_id():
     test_id = fandoms[-1]["id_fandom"]
     yield test_id
     requests.delete(f"{BASE_URL}/fandom", params={"id_fandom": test_id}, cookies=admin_cookies)
+
 
 # Пример тестов
 def test_get_all_fandoms():
